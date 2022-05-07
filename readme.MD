@@ -1,2 +1,2 @@
 <a href="https://serpent.academy">By serpent academy</a>
-MINF NFTs with Arweave, Metaplex, Typescript
+Upload Files to Arweave, Upload images, JSON files, videos and binaries.

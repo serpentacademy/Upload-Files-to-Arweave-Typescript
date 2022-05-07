@@ -23,7 +23,6 @@ import Arweave from 'arweave';
     
     transaction.addTag('Content-Type', 'image/png');
 
-    console.log(transaction.id);
     await arweave.transactions.sign(transaction, "Arweave WALLET JSON without ext:true");
     
 

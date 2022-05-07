@@ -13,14 +13,8 @@ import Arweave from 'arweave';
         logging: false,
     });
 
-    // Upload image to Arweave
-    const data = fs.readFileSync('./ape-punk.png');
+    // Upload JSON to Arweave
     
-    const transaction = await arweave.createTransaction({
-        data: data
-    });
-    
-    transaction.addTag('Content-Type', 'image/png');
     let wallet_object;
 
     const wallet =await fs.readFileSync('./wallet.json', 'utf8');
@@ -70,8 +64,10 @@ var imageUrl = "https://arweave.net/--56hNXqVLfji9q_qNfUowCv26UVlQlbv0jFfRogj6s?
     
     metadataTransaction.addTag('Content-Type', 'application/json');
     
-    await arweave.transactions.sign(metadataTransaction, );
+    await arweave.transactions.sign(metadataTransaction, "YOUR ARWEAVE WALLET JSON without ext:true");
     
+    console.log("https://arweave.net/"+metadataTransaction.id);
+
     let response = await arweave.transactions.post(metadataTransaction);
     console.log(response);
 })();

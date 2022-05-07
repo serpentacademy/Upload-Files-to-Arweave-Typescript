@@ -19,18 +19,21 @@ import Arweave from 'arweave';
     const transaction = await arweave.createTransaction({
         data: data
     });
+
     
     transaction.addTag('Content-Type', 'image/png');
 
+    console.log(transaction.id);
+    await arweave.transactions.sign(transaction, "Arweave WALLET JSON without ext:true");
     
-    await arweave.transactions.sign(transaction, );
-    
+
     const response = await arweave.transactions.post(transaction);
+    
     console.log(response);
 
-    const  id  = response.data;
-    const imageUrl = id ? `https://arweave.net/${id}` : undefined;
+    const imageUrl = transaction.id ? `https://arweave.net/${transaction.id}` : undefined;
 
+    console.log(imageUrl);
     // Upload metadata to Arweave
 
 //     const metadata = {

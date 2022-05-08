@@ -15,10 +15,6 @@ import Arweave from 'arweave';
 
     // Upload JSON to Arweave
     
-    let wallet_object;
-
-    const wallet =await fs.readFileSync('./wallet.json', 'utf8');
-    console.log(wallet);
    
 
 
